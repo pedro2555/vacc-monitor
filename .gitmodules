@@ -1,3 +1,4 @@
 [submodule "python_calendar_invite"]
 	path = python_calendar_invite
 	url = https://github.com/pedro2555/python-calendar-invite.git
+	branch = master
