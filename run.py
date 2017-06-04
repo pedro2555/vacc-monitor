@@ -100,10 +100,10 @@ for booking in bookings.copy():
 pickle.dump(bookings, open('LP.dat', 'wb'))
 
 # notify of new bookings
-#if not firstRun:
-#	for booking in new_bookings:
-if True:
-	for booking in bookings:
+if not firstRun:
+	for booking in new_bookings:
+# if True:
+# 	for booking in bookings:
 		# generate subject and body text
 		subject = ""
 		body_text = ""
@@ -120,7 +120,7 @@ if True:
 		else:
 			body_text = body_text + bookings[booking]['ends'].strftime("%A, %-d %B %H%MZ")
 		body_text = body_text + '.'
-		
+			
 		# create email
 		body = open(os.path.join('mail.html')).read()
 		body = body.replace('subject', subject)
@@ -138,4 +138,4 @@ if True:
 			"endDate": bookings[booking]['ends'],
 			"ics_file": ics})
 
-		break
+		#break
